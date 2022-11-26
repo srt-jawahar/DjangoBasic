@@ -4,5 +4,6 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.index, name = 'index'),
-    path('player', views.playerTracker, name='player')
+    path('player', views.playerTracker, name='player'),
+    path('record', views.record, name='record')
 ]

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from add.forms import PlayerForm
+from add.models import Player
 
 # Create your views here.
 
@@ -20,3 +21,13 @@ def playerTracker(request):
 
     form = PlayerForm()
     return render(request, 'player.html', {'form' : form})
+
+
+def record(request):
+    playerStats = Player.objects.all()
+
+    context = {
+        'playerStats' : playerStats
+    }
+
+    return render(request, 'details.html', context)

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="card p-5 m-5">
+            <h5 class="card-title">Player Details</h5>
+
+            <div class="card-body">
+                <!-- <ul>
+                    {% for temp in playerStats %}
+                        <li>{{temp.runs}}</li>
+                        <li>{{temp.playerName}}</li>
+                        <li>{{temp.team}}</li>
+                        <li>{{temp.records}}</li>
+                    {% endfor %}
+                </ul> -->
+
+                <div class="card-text">
+            <table class="table table-bordered table-dark mt-5">
+                <tr class="bg-warning">
+                    <th>name</th>
+                    <th>runs</th>
+                    <th>team</th>
+                    <th>records</th>
+                </tr>
+                <tr style="list-style: none;">
+                    <td>
+                        {% for team in playerStats%}
+                            <li>{{team.playerName}}</li>
+                        {%endfor%}
+                    </td>
+                    <td>
+                        {% for team in playerStats%}
+                            <li>{{team.runs}}</li>
+                        {%endfor%}
+                    </td>
+                    <td>
+                        {% for team in playerStats%}
+                            <li>{{team.team}}</li>
+                        {%endfor%}
+                    </td>
+                    <td>
+                        {% for team in playerStats%}
+                            <li>{{team.records}}</li>
+                        {%endfor%}
+                    </td>
+                </tr>
+            </table>
+
+            </div>
+            </div>
+
+            <div class="card-footer text-muted">
+                <a class="btn btn-primary" href="player" role="button">ADD NEW</a>
+              </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
